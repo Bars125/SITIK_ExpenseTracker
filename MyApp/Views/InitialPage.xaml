@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.Views.InitialPage"
+             xmlns:vm="clr-namespace:MyApp.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:Initial_ViewModel />
+    </ContentPage.BindingContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Padding="20">
+
+            <Label Text="What've you done today?)" TextColor="DimGray" HorizontalOptions="StartAndExpand" 
+                   VerticalOptions="StartAndExpand" FontSize="25" Margin="0,10,0,30"/>
+            
+            <Button Text="Spent 💸" FontSize="25" Clicked="ExpensesClicked" 
+                    HeightRequest="90" BackgroundColor="#d40000" CornerRadius="5"/>
+            
+            <Button Text="Got!" FontSize="25" Clicked="IncomeClicked" 
+                    HeightRequest="90" BackgroundColor="#00b600" CornerRadius="5"/>
+
+            <Label Text="Am I reach?" TextColor="DimGray" HorizontalOptions="StartAndExpand" 
+                    VerticalOptions="StartAndExpand" FontSize="25" Margin="0,30,0,30"/>
+
+            <Button Text="Statistics!" FontSize="25" Clicked="StatisticsClicked" 
+                    HeightRequest="90" BackgroundColor="#ae8cef" CornerRadius="5"/>
+          
+            <ListView x:Name="RoutesListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>

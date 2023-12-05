@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.Views.ExpensesPage">
+    
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+
+            <!-- Amount Entry -->
+            <Label Text="Amount" />
+            <Entry x:Name="amountEntry" Placeholder="Enter Amount" Keyboard="Numeric" Margin="0,0,0,10"/>
+
+            <!-- Category Picker -->
+            <Label Text="Category" />
+            <Picker x:Name="categoryPicker" SelectedIndex="0">
+                <Picker.Items>
+                    <x:String>General</x:String>
+                    <x:String>Groceries</x:String>
+                    <x:String>Auto</x:String>
+                    <x:String>Health </x:String>
+                    <x:String>Clothes</x:String>
+                    <x:String>Miscellaneous</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Add Expense Button -->
+            <Button Text="Add Expense" Clicked="AddExpenseClicked" HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand" Margin="0,20,0,0"/>
+
+            <Button Text="Expense List" Clicked="ExpenseListClicked" HorizontalOptions="CenterAndExpand" 
+        VerticalOptions="CenterAndExpand" Margin="0,20,0,0"/>
+
+            <Button Text="Back" Clicked="OnBackButtonClicked" HorizontalOptions="CenterAndExpand" 
+        VerticalOptions="CenterAndExpand" Margin="0,20,0,0"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
