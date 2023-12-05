@@ -34,31 +34,45 @@ namespace MyApp.Views
         private void AddExpenseClicked(object sender, EventArgs e)
         {
 
-            // Get user input
-            int amount = int.Parse(amountEntry.Text);
-            string category = categoryPicker.ToString();
-
-            // Create Expense object
-            ExpenseModel expense = new ExpenseModel { Amount = amount, Category = category };
-
-            // Save data using Preferences
-            SaveExpense(expense);
-
-            // Clear input fields
-            amountEntry.Text = string.Empty;
-            category = string.Empty;
-
-            // order is important!!
-            ((Button)sender).Text = "Done!";
-            ((Button)sender).BackgroundColor = Color.Coral;
-            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            // Get user input and validation
+            if (double.TryParse(amountEntry.Text, out double amount) && amount > 0)
             {
-                ((Button)sender).Text = "Add expense";
-                ((Button)sender).BackgroundColor = Color.FromHex("#2196FF");
-                return false; // Остановить таймер
-            });
+                amount = double.Parse(amountEntry.Text);
+                string category = CategoryPicker.SelectedItem != null ? CategoryPicker.SelectedItem.ToString() : "General";
+
+                // Create Expense object
+                ExpenseModel expense = new ExpenseModel { Amount = amount, Category = category };
+
+                // Save data using Preferences
+                SaveExpense(expense);
+
+                // Clear input fields
+                amountEntry.Text = string.Empty;
+                category = string.Empty;
+
+                // order is important!!
+                ((Button)sender).Text = "Done!";
+                ((Button)sender).BackgroundColor = Color.Coral;
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+                {
+                    ((Button)sender).Text = "Add expense";
+                    ((Button)sender).BackgroundColor = Color.FromHex("#2196FF");
+                    return false; // Остановить таймер
+                });
+            }
+            else
+            {
+                ((Button)sender).Text = "Enter Amount!";
+                ((Button)sender).BackgroundColor = Color.FromHex("#c71906");
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+                {
+                    ((Button)sender).Text = "Add expense";
+                    ((Button)sender).BackgroundColor = Color.FromHex("#2196FF");
+                    return false; // Остановить таймер
+                });
+            }
         }
-        private void SaveExpense(ExpenseModel expense)
+            private void SaveExpense(ExpenseModel expense)
         {
             // Retrieve existing expenses
             var expenses = Preferences.Get("expenses", string.Empty);

@@ -12,13 +12,14 @@
 
             <!-- Category Picker -->
             <Label Text="Category" />
-            <Picker x:Name="categoryPicker" SelectedIndex="0">
+            <Picker x:Name="CategoryPicker" SelectedIndex="0">
                 <Picker.Items>
                     <x:String>General</x:String>
                     <x:String>Groceries</x:String>
                     <x:String>Auto</x:String>
                     <x:String>Health </x:String>
                     <x:String>Clothes</x:String>
+                    <x:String>Utilities</x:String>
                     <x:String>Miscellaneous</x:String>
                 </Picker.Items>
             </Picker>

@@ -35,6 +35,18 @@ namespace MyApp.Views
             // Bind expenseList to a ListView or TableView in XAML
             ExpenseListView.ItemsSource = expenseList;
         }
+        private void ClearTable()
+        {
+            // Clear data from Preferences
+            Preferences.Remove("expenses");
+
+            // Update the ListView or TableView
+            ExpenseListView.ItemsSource = new List<ExpenseModel>();
+        }
+        private void ClearTableButton(object sender, EventArgs e)
+        {
+            ClearTable();
+        }
 
         private async void OnBackButtonClicked(object sender, EventArgs e)
         {

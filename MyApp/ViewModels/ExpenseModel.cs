@@ -7,7 +7,7 @@ namespace MyApp.ViewModels
 {
     public class ExpenseModel
     {
-        public int Amount { get; set; }
+        public double Amount { get; set; }
         public string Category { get; set; }
     }
 }
