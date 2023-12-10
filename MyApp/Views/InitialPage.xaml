@@ -3,12 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyApp.Views.InitialPage"
              xmlns:vm="clr-namespace:MyApp.ViewModels"
-             Title="{Binding Title}">
-    
-    <ContentPage.BindingContext>
-        <vm:Initial_ViewModel />
-    </ContentPage.BindingContext>
-    
+             Title="Expense Tracker">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

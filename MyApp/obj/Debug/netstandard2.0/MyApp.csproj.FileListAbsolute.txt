@@ -6,7 +6,6 @@ D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\MyApp.csproj.As
 D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\MyApp.GeneratedMSBuildEditorConfig.editorconfig
 D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
-D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
 D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\MyApp.AssemblyInfoInputs.cache
 D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\MyApp.AssemblyInfo.cs
 D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\MyApp.csproj.CoreCompileInputs.cache
@@ -19,3 +18,4 @@ D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\Views\InitialPa
 D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\Views\IncomePage.xaml.g.cs
 D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\Views\StatisticsPage.xaml.g.cs
 D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\Views\ExpensesListPage.xaml.g.cs
+D:\Visual Studio 2022\Prjkt\MyApp\MyApp\obj\Debug\netstandard2.0\Views\IncomeListPage .xaml.g.cs

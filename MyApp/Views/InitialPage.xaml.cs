@@ -23,5 +23,10 @@ namespace MyApp.Views
         {
             await Navigation.PushAsync(new StatisticsPage());
         }
+        private void OnHomeClicked(object sender, EventArgs e)
+        {
+            // Navigate back to the home page
+            Navigation.PopToRootAsync();
+        }
     }
 }

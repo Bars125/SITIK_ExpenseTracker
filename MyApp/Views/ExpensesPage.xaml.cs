@@ -17,13 +17,9 @@ namespace MyApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExpensesPage : ContentPage
     {
-        //ExpenseViewModel _viewModel;
         public ExpensesPage()
         {
             InitializeComponent();
-
-           // _viewModel = new ExpenseViewModel();
-            //BindingContext = _viewModel;
         }
         protected override void OnAppearing()
         {

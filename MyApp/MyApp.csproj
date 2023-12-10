@@ -15,6 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\IncomeListPage .xaml.cs">
+      <DependentUpon>IncomeListPage .xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\InitialPage.xaml.cs">
       <DependentUpon>InitialPage.xaml</DependentUpon>
     </Compile>

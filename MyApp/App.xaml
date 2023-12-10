@@ -15,6 +15,24 @@
                 <On Platform="UWP" Value="Assets/ProximaNova-Regular.ttf#ProximaNova-Regular" />
             </OnPlatform>
 
+            <ControlTemplate x:Key="CustomNavigationPageTemplate">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Custom navigation bar with "Home" button 
+                    <StackLayout BackgroundColor="#3498DB" Orientation="Horizontal" HeightRequest="50" Padding="10,5,10,5">
+                        <Button Text="Home" TextColor="White" BackgroundColor="Transparent" Clicked="OnHomeButtonClicked" />
+                        <Label Text="Your App Name" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>-->
+
+                    <!-- Content area -->
+                    <ContentPresenter Grid.Row="1" />
+                </Grid>
+            </ControlTemplate>
+
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
