@@ -59,6 +59,18 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.6, )"
+            },
+            "SkiaSharp.NativeAssets.Win32": {
+              "target": "Package",
+              "version": "[2.88.6, )"
+            },
+            "SkiaSharp.Views.Forms": {
+              "target": "Package",
+              "version": "[2.88.6, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.7.0, )"

@@ -2,38 +2,43 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyApp.Views.ExpensesPage">
-    
+
     <ContentPage.Content>
-        <StackLayout Padding="20">
 
-            <!-- Amount Entry -->
-            <Label Text="Amount" />
-            <Entry x:Name="amountEntry" Placeholder="Enter Amount" Keyboard="Numeric" Margin="0,0,0,10"/>
+        <Grid>
+            <!-- Background Image -->
+            <Image Source="background_expensepage.jpg" Aspect="AspectFill" Opacity="0.8" />
+            <StackLayout Padding="20">
 
-            <!-- Category Picker -->
-            <Label Text="Category" />
-            <Picker x:Name="CategoryPicker" SelectedIndex="0">
-                <Picker.Items>
-                    <x:String>General</x:String>
-                    <x:String>Groceries</x:String>
-                    <x:String>Auto</x:String>
-                    <x:String>Health </x:String>
-                    <x:String>Clothes</x:String>
-                    <x:String>Utilities</x:String>
-                    <x:String>Miscellaneous</x:String>
-                </Picker.Items>
-            </Picker>
+                <!-- Amount Entry -->
+                <Label Text="Amount" />
+                <Entry x:Name="amountEntry" Placeholder="Enter Amount" Keyboard="Numeric" Margin="0,0,0,10"/>
 
-            <!-- Add Expense Button -->
-            <Button Text="Add Expense" Clicked="AddExpenseClicked" HorizontalOptions="CenterAndExpand" 
+                <!-- Category Picker -->
+                <Label Text="Category" />
+                <Picker x:Name="CategoryPicker" SelectedIndex="0">
+                    <Picker.Items>
+                        <x:String>General</x:String>
+                        <x:String>Groceries</x:String>
+                        <x:String>Auto</x:String>
+                        <x:String>Health</x:String>
+                        <x:String>Clothes</x:String>
+                        <x:String>Utilities</x:String>
+                        <x:String>Miscellaneous</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <!-- Add Expense Button -->
+                <Button Text="Add Expense" Clicked="AddExpenseClicked" HorizontalOptions="CenterAndExpand" 
                     VerticalOptions="CenterAndExpand" Margin="0,20,0,0"/>
 
-            <Button Text="Expense List" Clicked="ExpenseListClicked" HorizontalOptions="CenterAndExpand" 
+                <Button Text="Expense List" Clicked="ExpenseListClicked" HorizontalOptions="CenterAndExpand" 
         VerticalOptions="CenterAndExpand" Margin="0,20,0,0"/>
 
-            <Button Text="Back" Clicked="OnBackButtonClicked" HorizontalOptions="CenterAndExpand" 
+                <Button Text="Back" Clicked="OnBackButtonClicked" HorizontalOptions="CenterAndExpand" 
         VerticalOptions="CenterAndExpand" Margin="0,20,0,0"/>
 
-        </StackLayout>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

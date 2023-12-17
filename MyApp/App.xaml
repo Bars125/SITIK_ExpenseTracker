@@ -35,6 +35,7 @@
 
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="FontSize" Value="20" />
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
@@ -54,11 +55,15 @@
             </Style>
             <Style TargetType="Label">
                 <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextDecorations" Value="Underline"  />
             </Style>
             <Style TargetType="Entry">
                 <Setter Property="FontSize" Value="40" />
+                <Setter Property="TextColor" Value="White" />
             </Style>
             <Style TargetType="Picker">
+                <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontSize" Value="40" />
             </Style>
         </ResourceDictionary>        

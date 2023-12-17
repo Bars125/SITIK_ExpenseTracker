@@ -66,25 +66,25 @@ namespace MyApp.Views
                 });
             }
         }
-        private void SaveIncome(IncomeModel expense)
+        private void SaveIncome(IncomeModel income)
         {
             // Retrieve existing expenses
-            var expenses = Preferences.Get("incomes", string.Empty);
+            var incomes = Preferences.Get("incomes", string.Empty);
 
             // Deserialize JSON string to List<Expense>
-            var expenseList = string.IsNullOrEmpty(expenses)
+            var incomeList = string.IsNullOrEmpty(incomes)
                 ? new List<IncomeModel>()
-                : JsonConvert.DeserializeObject<List<IncomeModel>>(expenses);
+                : JsonConvert.DeserializeObject<List<IncomeModel>>(incomes);
 
             // Add new expense
-            expenseList.Add(expense);
+            incomeList.Add(income);
 
             // Serialize List<Expense> to JSON string and save to Preferences
-            Preferences.Set("incomes", JsonConvert.SerializeObject(expenseList));
+            Preferences.Set("incomes", JsonConvert.SerializeObject(incomeList));
         }
         private void IncomeListClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ExpensesListPage());
+            Navigation.PushAsync(new IncomeListPage());
         }
         private async void OnBackButtonClicked(object sender, EventArgs e)
         {
