@@ -1,5 +1,4 @@
-﻿// StatisticsVM.cs
-using MyApp.ViewModels;
+﻿using MyApp.ViewModels;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -14,7 +13,6 @@ public class StatisticsVM
 
     public StatisticsVM()
     {
-        // Initialize collections and add sample data if needed
         Expenses = new ObservableCollection<ExpenseModel>();
         Incomes = new ObservableCollection<IncomeModel>();
     }

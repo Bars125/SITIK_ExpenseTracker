@@ -7,7 +7,7 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#2196FF</Color>
+            <Color x:Key="Primary">#1b32a4</Color>
                 
             <OnPlatform x:TypeArguments="x:String" x:Key="ProximaNovaFont">
                 <On Platform="iOS" Value="ProximaNova-Regular" />
@@ -21,12 +21,6 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-
-                    <!-- Custom navigation bar with "Home" button 
-                    <StackLayout BackgroundColor="#3498DB" Orientation="Horizontal" HeightRequest="50" Padding="10,5,10,5">
-                        <Button Text="Home" TextColor="White" BackgroundColor="Transparent" Clicked="OnHomeButtonClicked" />
-                        <Label Text="Your App Name" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-                    </StackLayout>-->
 
                     <!-- Content area -->
                     <ContentPresenter Grid.Row="1" />
@@ -54,16 +48,15 @@
                 </Setter>
             </Style>
             <Style TargetType="Label">
-                <Setter Property="FontSize" Value="20" />
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="TextDecorations" Value="Underline"  />
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="TextColor" Value="#f5faff" />
             </Style>
             <Style TargetType="Entry">
                 <Setter Property="FontSize" Value="40" />
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor" Value="#404040" />
             </Style>
             <Style TargetType="Picker">
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor"  Value="#404040" />
                 <Setter Property="FontSize" Value="40" />
             </Style>
         </ResourceDictionary>        

@@ -21,12 +21,6 @@ namespace MyApp.Views
         {
             InitializeComponent();
         }
-        protected override void OnAppearing()
-        {
-            // Set focus on the amountEntry field when the page appears
-            amountEntry.Focus();
-            base.OnAppearing();
-        }
         private void AddExpenseClicked(object sender, EventArgs e)
         {
 
@@ -52,7 +46,7 @@ namespace MyApp.Views
                 Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     ((Button)sender).Text = "Add expense";
-                    ((Button)sender).BackgroundColor = Color.FromHex("#2196FF");
+                    ((Button)sender).BackgroundColor = Color.FromHex("#1b32a4");
                     return false; // Остановить таймер
                 });
             }
@@ -63,12 +57,12 @@ namespace MyApp.Views
                 Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     ((Button)sender).Text = "Add expense";
-                    ((Button)sender).BackgroundColor = Color.FromHex("#2196FF");
+                    ((Button)sender).BackgroundColor = Color.FromHex("#1b32a4");
                     return false; // Остановить таймер
                 });
             }
         }
-            private void SaveExpense(ExpenseModel expense)
+        private void SaveExpense(ExpenseModel expense)
         {
             // Retrieve existing expenses
             var expenses = Preferences.Get("expenses", string.Empty);
@@ -83,6 +77,10 @@ namespace MyApp.Views
 
             // Serialize List<Expense> to JSON string and save to Preferences
             Preferences.Set("expenses", JsonConvert.SerializeObject(expenseList));
+
+            // Update the sum of expenses
+            double totalExpenses = expenseList.Sum(x => x.Amount);
+            Preferences.Set("totalExpenses", totalExpenses);
         }
         private void ExpenseListClicked(object sender, EventArgs e)
         {
@@ -90,7 +88,7 @@ namespace MyApp.Views
         }
         private async void OnBackButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new InitialPage());
+            await Navigation.PopToRootAsync();
         }
     }
 }

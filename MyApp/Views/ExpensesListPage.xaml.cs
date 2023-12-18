@@ -39,6 +39,7 @@ namespace MyApp.Views
         {
             // Clear data from Preferences
             Preferences.Remove("expenses");
+            Preferences.Remove("totalExpenses");
 
             // Update the ListView or TableView
             ExpenseListView.ItemsSource = new List<ExpenseModel>();

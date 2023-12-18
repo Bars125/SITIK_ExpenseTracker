@@ -1,5 +1,4 @@
-﻿<!-- StatisticsPage.xaml -->
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyApp.Views.StatisticsPage">
 
@@ -11,8 +10,8 @@
 
                 <!-- Display Total Expenses, Incomes, and Summary -->
                 <Label x:Name="Label1" FontSize="25" Text="{Binding TotalExpenses, StringFormat='Total Expenses: {0:C}'}" />
-                <Label FontSize="25" Text="{Binding TotalIncomes, StringFormat='Total Incomes: {0:C}'}" />
-                <Label FontSize="25" Text="{Binding Summary, StringFormat='Summary: {0:C}'}" />
+                <Label x:Name="Label2" FontSize="25" Text="{Binding TotalIncomes, StringFormat='Total Incomes: {0:C}'}" />
+                <Label x:Name="Label3" FontSize="30" TextDecorations="Underline" Text="{Binding Summary, StringFormat='Summary: {0:C}'}" />
 
             </StackLayout>
         </Grid>

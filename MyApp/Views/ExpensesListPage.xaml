@@ -7,25 +7,31 @@
         <Grid>
             <Image Source="background_expensepage.jpg" Aspect="AspectFill" Opacity="0.8" />
             <StackLayout>
-                <Label Text="Expense List" Margin="10,15,0,15"/>
+                <Label Text="Expense List" TextDecorations="Underline" FontAttributes="Bold" Margin="10,15,0,15"/>
 
                 <!-- List View for Expenses -->
                 <ListView x:Name="ExpenseListView">
-                    <ListView.Header >
-                        <StackLayout Orientation="Horizontal" BackgroundColor="#ae8cef" Padding="10" >
-                            <Label Text="Amount" TextColor="White" HorizontalOptions="FillAndExpand" />
-                            <Label Text="Category" TextColor="White" HorizontalOptions="FillAndExpand" />
-                            <!--<Label Text="Date" TextColor="White" HorizontalOptions="FillAndExpand" />-->
-                        </StackLayout>
+                    <ListView.Header>
+                        <Grid BackgroundColor="#476aec" Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Amount" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0"/>
+                            <Label Text="Category" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"/>
+                        </Grid>
                     </ListView.Header>
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout Orientation="Horizontal" Padding="7">
-                                    <Label Text="{Binding Amount}" HorizontalOptions="CenterAndExpand" />
-                                    <Label Text="{Binding Category}" HorizontalOptions="CenterAndExpand" />
-                                    <!--<Label Text="{Binding Date}" HorizontalOptions="FillAndExpand" />-->
-                                </StackLayout>
+                                <Grid Padding="7">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Amount}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0"/>
+                                    <Label Text="{Binding Category}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"/>
+                                </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

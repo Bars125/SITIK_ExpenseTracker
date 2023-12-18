@@ -19,12 +19,6 @@ namespace MyApp.Views
         {
             InitializeComponent();
         }
-        protected override void OnAppearing()
-        {
-            // Set focus on the amountEntry field when the page appears
-            amountEntry.Focus();
-            base.OnAppearing();
-        }
         private void AddIncomeClicked(object sender, EventArgs e)
         {
 
@@ -34,11 +28,11 @@ namespace MyApp.Views
                 amount = double.Parse(amountEntry.Text);
                 string category = CategoryPicker.SelectedItem != null ? CategoryPicker.SelectedItem.ToString() : "General";
 
-                // Create Expense object
-                IncomeModel expense = new IncomeModel { Amount = amount, Category = category };
+                // Create Income object
+                IncomeModel income = new IncomeModel { Amount = amount, Category = category };
 
                 // Save data using Preferences
-                SaveIncome(expense);
+                SaveIncome(income);
 
                 // Clear input fields
                 amountEntry.Text = string.Empty;
@@ -49,8 +43,8 @@ namespace MyApp.Views
                 ((Button)sender).BackgroundColor = Color.Coral;
                 Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
-                    ((Button)sender).Text = "Add expense";
-                    ((Button)sender).BackgroundColor = Color.FromHex("#2196FF");
+                    ((Button)sender).Text = "Add income";
+                    ((Button)sender).BackgroundColor = Color.FromHex("#1b32a4");
                     return false; // Остановить таймер
                 });
             }
@@ -60,27 +54,31 @@ namespace MyApp.Views
                 ((Button)sender).BackgroundColor = Color.FromHex("#c71906");
                 Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
-                    ((Button)sender).Text = "Add expense";
-                    ((Button)sender).BackgroundColor = Color.FromHex("#2196FF");
+                    ((Button)sender).Text = "Add income";
+                    ((Button)sender).BackgroundColor = Color.FromHex("#1b32a4");
                     return false; // Остановить таймер
                 });
             }
         }
         private void SaveIncome(IncomeModel income)
         {
-            // Retrieve existing expenses
+            // Retrieve existing incomes
             var incomes = Preferences.Get("incomes", string.Empty);
 
-            // Deserialize JSON string to List<Expense>
+            // Deserialize JSON string to List<Income>
             var incomeList = string.IsNullOrEmpty(incomes)
                 ? new List<IncomeModel>()
                 : JsonConvert.DeserializeObject<List<IncomeModel>>(incomes);
 
-            // Add new expense
+            // Add new income
             incomeList.Add(income);
 
-            // Serialize List<Expense> to JSON string and save to Preferences
+            // Serialize List<Income> to JSON string and save to Preferences
             Preferences.Set("incomes", JsonConvert.SerializeObject(incomeList));
+
+            // Update the sum of incomes
+            double totalIncomes = incomeList.Sum(x => x.Amount);
+            Preferences.Set("totalIncomes", totalIncomes);
         }
         private void IncomeListClicked(object sender, EventArgs e)
         {
@@ -88,7 +86,7 @@ namespace MyApp.Views
         }
         private async void OnBackButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new InitialPage());
+            await Navigation.PopToRootAsync();
         }
     }
 }

@@ -25,23 +25,24 @@ namespace MyApp.Views
             base.OnAppearing();
 
             // Retrieve expenses from Preferences
-            var expenses = Preferences.Get("incomes", string.Empty);
+            var incomes = Preferences.Get("incomes", string.Empty);
 
             // Deserialize JSON string to List<Expense>
-            var expenseList = string.IsNullOrEmpty(expenses)
+            var incomeList = string.IsNullOrEmpty(incomes)
                 ? new List<ExpenseModel>()
-                : JsonConvert.DeserializeObject<List<ExpenseModel>>(expenses);
+                : JsonConvert.DeserializeObject<List<ExpenseModel>>(incomes);
 
             // Bind expenseList to a ListView or TableView in XAML
-            ExpenseListView.ItemsSource = expenseList;
+            IncomeListView.ItemsSource = incomeList;
         }
         private void ClearTable()
         {
             // Clear data from Preferences
             Preferences.Remove("incomes");
+            Preferences.Remove("totalIncomes");
 
             // Update the ListView or TableView
-            ExpenseListView.ItemsSource = new List<ExpenseModel>();
+            IncomeListView.ItemsSource = new List<IncomeModel>();
         }
         private void ClearTableButton(object sender, EventArgs e)
         {
@@ -50,7 +51,7 @@ namespace MyApp.Views
 
         private async void OnBackButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ExpensesPage());
+            await Navigation.PushAsync(new IncomePage());
         }
     }
 }

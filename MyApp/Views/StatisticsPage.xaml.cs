@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,6 +15,18 @@ namespace MyApp.Views
 
             _viewModel = new StatisticsVM();
             BindingContext = _viewModel;
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            double totalExpenses = Preferences.Get("totalExpenses", 0.0);
+            double totalIncomes = Preferences.Get("totalIncomes", 0.0);
+            double summary = totalIncomes - totalExpenses;
+
+            Label1.Text = $"Total Expenses: {totalExpenses:C}";
+            Label2.Text = $"Total Incomes: {totalIncomes:C}";
+            Label3.Text = $"Summary: {summary} $";
         }
     }
 }

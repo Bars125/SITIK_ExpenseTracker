@@ -31,7 +31,7 @@
 
     <TabBar>
         <ShellContent Title="Lobby" Icon="icon_about.png" Route="InitialPage" ContentTemplate="{DataTemplate local:InitialPage}" />
-        <ShellContent Title="Statistics" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:StatisticsPage}" />
+        <ShellContent Title="Statistics" Icon="icon_feed.png" Route="StatisticsPage" ContentTemplate="{DataTemplate local:StatisticsPage}" />
     </TabBar>
 
     <!--
